@@ -15,7 +15,7 @@ public class TriangleCount {
         try (JavaSparkContext sc = new JavaSparkContext(conf)) {
             sc.setLogLevel("ERROR");
 
-            // Кожен рядок "a b" означає ребро a -> b.
+            
             JavaPairRDD<Integer, Integer> edges = sc.textFile(args[0])
                     .filter(line -> !line.trim().isEmpty())
                     .mapToPair(line -> {
